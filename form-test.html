@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>form-test</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+	</head>
+	<body>
+		<form action="" method="get" class="my-blog">
+			<input type="text" name="title" />
+			<textarea name="description"></textarea>
+			<input type="submit" value="确定"/>
+			<button type="button" class="btn-trigger">trigger</button>
+		</form>
+		<script src="lib/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function(){
+				var model = {
+					title: 'aa',
+					description: 'bb',
+				}
+				$('.my-blog').find('input[type=text], textarea').each(function(i){
+					console.log(this);
+					var name = $(this).attr('name');
+					var value = model[name];
+					if(value != undefined){
+						$(this).val(value);
+					}
+				})
+			})();
+			$('.my-blog').submit(function(e){
+				e.preventDefault();
+				console.log('submit');
+			})
+			$('.btn-trigger').click(function(e){
+				$('.my-blog').submit();
+			})
+		</script>
+	</body>
+</html>

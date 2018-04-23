@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue-test</title>
+	</head>
+	<body>
+		<div id="app">
+			<!--<div class="title" v-text="form.title"></div>
+			<div class="age" v-text="form.age"></div>-->
+			<ul class="list">
+				<li v-for="item in list">
+					<span class="list__name" v-text="item.name"></span>
+					<span class="list__gender" v-text="item.gender"></span>
+				</li>
+			</ul>
+			<form action="" method="post">
+				<input type="text" v-model.lazy="form.title" />
+				<span>text: {{form.title}}</span>
+				<input type="checkbox" value="jack" v-model="form.user" :true-value="a" :false-value="b"/>
+				<!--<input type="checkbox" value="rose" v-model="form.user"/>-->
+				<span>{{form.user}}</span>
+				<input type="radio" value="aa" v-model="form.radio"/>
+				<span>radio: {{form.radio}}</span>
+				<input type="submit" value="submit"/>
+			</form>
+		</div>
+		<script src="lib/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue-test.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

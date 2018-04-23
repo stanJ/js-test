@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>input-test</title>
+		<style type="text/css">
+			.checkbox__inner{
+				border: 1px solid #000;
+			}
+			#my-checkbox{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- <label for="my-checkbox">
+			<span class="checkbox__inner"></span>
+			<input type="checkbox" id="my-checkbox" value="" />
+			<span class="input__inner">旅游</span>
+		</label> -->
+		
+		<input type="text" id="input-text" value="" />
+		<script type="text/javascript">
+			// var input = document.querySelector('#my-checkbox');
+			// input.addEventListener('change', function(e){
+			// 	console.log('--------------this----------------');
+			// 	console.log(this);
+			// 	console.log('--------------et----------------');
+			// 	console.log(e);
+			// })
+			var input1 = document.querySelector('#input-text');
+			// input1.addEventListener('input', function(e){
+			// 	console.log(this.value);
+			// })
+			input1.addEventListener('change', function(e){
+				console.log(this.value);
+			})
+		</script>
+	</body>
+</html>

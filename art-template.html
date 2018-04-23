@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>art-template</title>
+		
+		<ul class="ul">
+			<!--<li class="li">
+				<span>{{$value.name}}</span>
+				<span>{{$value.gender}}</span>
+				<span>{{$value.age}}</span>
+			</li>-->
+		</ul>
+		<div class="test-var-wrapper"></div>
+	</head>
+	<body>
+		<script src="lib/template-web.js" type="text/javascript" charset="utf-8"></script>
+		<script src="lib/jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/html" id="tpl-people">
+			{{each target}}
+				<li class="li">
+					<span>{{$value.name}}</span>
+					<span>{{$value.gender}}</span>
+					<span>{{$value.age}}</span>
+				</li>
+			{{/each}}
+		</script>
+		<script type="text/html" id="test-var">
+			{{set stu = data.student}}
+			<div>{{data.school}}</div>
+			<div>{{stu.name}}</div>
+		</script>
+		<script type="text/javascript">
+			var data = [
+				{name: 'aa', gender: 'male', age: 12},
+				{name: 'bb', gender: 'male', age: 22},
+				{name: 'cc', gender: 'male', age: 32},
+			]
+			var html = template('tpl-people', {
+				target: data,
+			});
+			$('.ul').html(html);
+			var data1 = {
+				school: 'sit',
+				student: {
+					name: 'stan',
+					age: 22,
+				}
+			}
+			var h = template('test-var', {
+				data: data1,
+			});
+			$(".test-var-wrapper").html(h);
+		</script>
+	</body>
+</html>
