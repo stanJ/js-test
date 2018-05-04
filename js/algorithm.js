@@ -106,3 +106,18 @@ function unique2(ary) {
   }
   return res;
 }
+
+// 自己随便实现的函数节流，应该不对
+function throttle(func, delay) {
+  let timer
+
+  return function (...args) {
+    if (timer) {
+      return
+    }
+    timer = setTimeout(() => {
+      timer = null
+      func.apply(this, args)
+    }, delay)
+  }
+}
